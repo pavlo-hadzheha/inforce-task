@@ -1,0 +1,131 @@
+:host {
+  display: none;
+  --padding: 40px;
+  --gutter: 20px;
+
+  .ss-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+    padding: calc(var(--padding) / 2);
+
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f9f9f9;
+      padding: calc(var(--padding) / 2) var(--padding);
+      border-radius: inherit;
+
+      &+hr {
+        margin-inline: var(--gutter);
+      }
+    }
+
+    &-title {
+      font-family: Nunito-Bold;
+      font-size: 26px;
+    }
+
+    &-content {
+      padding: calc(var(--padding) / 2) var(--padding);
+      border-radius: inherit;
+    }
+
+    &-footer {
+        padding: 0 var(--padding) calc(var(--padding) / 2);
+    }
+
+    &-close {
+      width: 40px;
+      height: 40px;
+      background-color: #e4e4e4;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s;
+
+      i {
+        color: var(--secondary-text);
+        font-size: 16px;
+      }
+
+      &:hover {
+        background-color: var(--primary-color);
+
+        i {
+          color: white;
+        }
+      }
+    }
+
+    &-body {
+      border-radius: var(--br);
+      background: #fff;
+      width: 700px;
+      margin: 10vw auto 0;
+    }
+  }
+
+  .ss-modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 900;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :host {
+    .ss-modal {
+
+      &-body {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  :host {
+    --gutter: 10px;
+    --padding: 20px;
+    .ss-modal {
+
+      padding: 0;
+
+      &-title {
+        font-size: 20px;
+      }
+
+      &-body {
+        margin: 0;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .ss-modal-header {
+          flex: 0;
+        }
+        .ss-modal-content {
+          flex: 1;
+        }
+        .ss-modal-footer {
+          flex: 0;
+        }
+      }
+    }
+  }
+}
+
+

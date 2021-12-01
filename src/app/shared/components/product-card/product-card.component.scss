@@ -1,0 +1,85 @@
+.card {
+    --padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    box-shadow: 0 0 10px 0 #777;
+    &-main {
+        position: relative;
+        width: inherit;
+        height: 300px;
+        display: flex;
+        align-items: flex-end;
+        padding: var(--padding);
+        overflow: hidden;
+        cursor: pointer;
+        &-info {
+            width: 100%;
+            &-category {
+                background-color: var(--primary-color);
+                border-radius: 100vw;
+                padding: 7px;
+                color: white;
+                width: max-content;
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+
+            &-details {
+                &-title {
+                    font-size: 24px;
+                    margin-bottom: 10px;
+
+                }
+            }
+
+            .some-wrapper {
+                width: inherit;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: white;
+                .favorites {
+                    position: relative;
+                    border-radius: 50%;
+                    background-color: rgba(0,0,0,0.6);
+                    padding: 14px;
+                    transition: background-color 0.3s;
+                    &:hover {
+                        background-color: red;
+                    }
+                }
+            }
+        }
+        .open-now {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            transform: rotate(45deg) translateX(48%);
+            background-color: #54BA1D;
+            height: 30px;
+            line-height: 30px;
+            width: 200px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            transform-origin: right center;
+        }
+    }
+
+    &-reviews {
+        color: var(--secondary-text);
+        display: flex;
+        align-items: center;
+        flex: 0;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        &-main {
+            background-position: center bottom;
+        }
+    }
+}

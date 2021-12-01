@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "inforce-task-9c999": {
+      "hosting": {
+        "inforce-task": [
+          "inforce-task-9c999"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "inforce-task-9c999"
+  }
+}

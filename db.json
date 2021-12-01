@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "name": "jsakd",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "count": 120,
+      "weight": "120",
+      "weight_unit": "g",
+      "comments": [],
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/inforce-task-9c999.appspot.com/o/images%2Fproducts%2F1638347503701_kot-minimalizm-rycar-cats.jpg?alt=media&token=bf30f0e3-15c8-4b82-9025-b912b7996718",
+      "id": 1
+    },
+    {
+      "name": null,
+      "size": {
+        "width": null,
+        "height": null
+      },
+      "count": null,
+      "weight": null,
+      "weight_unit": "g",
+      "comments": [],
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/inforce-task-9c999.appspot.com/o/images%2Fproducts%2F1638347529317_kot-minimalizm-rycar-cats.jpg?alt=media&token=a409e7c2-68f8-4263-8781-253ae57fc4f4",
+      "id": 2
+    }
+  ],
+  "comments": []
+}

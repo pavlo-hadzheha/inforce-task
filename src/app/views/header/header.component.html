@@ -1,0 +1,51 @@
+<header id="header">
+    <div class="nav">
+        <a class="nav-link" (click)="addProduct()">
+            <i class="fad fa-plus"></i>
+        </a>
+    </div>
+</header>
+
+<custom-modal id="addProductModal">
+    <div custom-modal-title>Add product</div>
+    <div custom-modal-content>
+        <form [formGroup]="addProductForm" (ngSubmit)="createProduct()" id="addProductForm">
+            <div class="input-group">
+                <label class="form-control-label">Name:</label>
+                <input class="form-control" type="text" formControlName="name" placeholder="Name of the product..">
+            </div>
+            <div class="input-group">
+                <label class="form-control-label">Size: </label>
+                <div class="input-row" formGroupName="size">
+                    <input class="form-control" type="number" formControlName="width" placeholder="Width..">
+                    <input class="form-control" type="number" formControlName="height" placeholder="Height..">
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label class="form-control-label">Weight: </label>
+                    <div class="input-row">
+                        <input class="form-control" type="text" formControlName="weight" placeholder="Weight..">
+                        <select class="form-control" formControlName="weight_unit">
+                            <option value="g" selected>g</option>
+                            <option value="kg">kg</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label class="form-control-label">How many: </label>
+                    <input class="form-control" type="number" formControlName="count" placeholder="Count..">
+                </div>
+            </div>
+            <div class="input-group">
+                <label class="form-control-label">Upload image: </label>
+                <input class="form-control" type="file" (change)="handleFileInput($event)">
+            </div>
+            <img [src]="imageUrl" *ngIf="imageUrl" width="100%">
+        </form>
+    </div>
+    <div custom-modal-footer>
+        <input type="submit" form="addProductForm" value="Create" class="btn" [disabled]="addProductForm.invalid">
+        <input type="button" value="Close" class="btn" (click)="closeModal('addProductModal')">
+    </div>
+</custom-modal>

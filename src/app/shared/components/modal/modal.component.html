@@ -1,0 +1,20 @@
+<div class="ss-modal" (keydown.esc)="onKeydown($event)" tabindex="-1">
+    <div class="ss-modal-body growFromCenter">
+        <div class="ss-modal-header">
+            <h2 class="ss-modal-title">
+                <ng-content select="[custom-modal-title]"></ng-content>
+            </h2>
+            <div class="custom-modal-close" (click)="close()">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <hr>
+        <div class="ss-modal-content">
+            <ng-content select="[custom-modal-content]"></ng-content>
+        </div>
+        <div class="ss-modal-footer">
+            <ng-content select="[custom-modal-footer]"></ng-content>
+        </div>
+    </div>
+</div>
+<div class="ss-modal-background fadeIn"></div>

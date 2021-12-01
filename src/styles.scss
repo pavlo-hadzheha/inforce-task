@@ -1,1 +1,87 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary-color: gold;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body.ss-modal-open {
+  overflow: hidden;
+}
+
+.fadeIn {
+  opacity: 0;
+  display: block;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.growFromCenter {
+  animation-name: growFromCenter;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    display: none;
+  }
+
+  1% {
+    display: block;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes growFromCenter {
+  0% {
+    transform: scale(0)
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+
+  @media screen and (min-width: 576px) {
+    width: 540px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 720px;
+  }
+
+  @media screen and (min-width: 992px) {
+    width: 960px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1140px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    width: 1320px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+}

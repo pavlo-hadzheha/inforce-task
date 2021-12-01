@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-main" [style]="background" [routerLink]="['/product-details', data.id]">
+        <div class="card-main-info">
+            <div class="card-main-info-category">{{ data.name }}</div>
+            <div class="some-wrapper">
+                <div class="card-main-info-details">
+                    <div class="card-main-info-details-size">{{ data.count }}</div>
+                    <div class="card-main-info-details-reviews">{{ data.weight + data.weight_unit }}</div>
+                </div>
+                <div class="favorites" (click)="openDeleteModal(data.id, $event)">
+                    <i class="far fa-trash"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-reviews">Number of reviews: {{ data.comments.length }}</div>
+</div>
+
+<custom-modal id="confirmDeleteModal">
+    <div custom-modal-title>Are you sure?</div>
+    <div custom-modal-content>
+        <input type="button" value="Delete" class="btn btn-red" (click)="deleteProduct()">
+        <input type="button" form="addProductForm" value="Cancel" class="btn btn-regular" (click)="closeDeleteModal()">
+    </div>
+</custom-modal>
